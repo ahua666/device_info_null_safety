@@ -36,6 +36,13 @@ public class DeviceInfoNullSafetyPlugin implements FlutterPlugin, MethodCallHand
         } else if ("getSensorInfo".equals(call.method)) {
             SensorInfo sensorInfo = new SensorInfo(this.context);
             result.success(sensorInfo.getSensorInfo());
+        } else if ("getMemoryInfo".equals(call.method)) {
+            DeviceMemoryInfo deviceMemoryInfo = new DeviceMemoryInfo(this.context);
+            result.success(deviceMemoryInfo.getMemoryInfo(call.arguments.toString()));
+        } else if ("getFingerPrintInfo".equals(call.method)) {
+            FingerPrintInfo fingerPrintInfo = new FingerPrintInfo(this.context);
+            result.success(fingerPrintInfo.getFingerprintInfo());
+            ;
         } else {
             result.notImplemented();
         }

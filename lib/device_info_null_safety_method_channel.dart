@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:device_info_null_safety/memory_info_enum.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -65,6 +66,40 @@ class MethodChannelDeviceInfoNullSafety extends DeviceInfoNullSafetyPlatform {
             [MapEntry("code", error.code), MapEntry("message", error.message)],
           ),
       ];
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getMemoryInfo(
+      {required MemoryInfoUnit memoryInfoUnit}) async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final memoryInfo =
+          await methodChannel.invokeMethod<Map<dynamic, dynamic>>(
+              'getMemoryInfo', memoryInfoUnit.name);
+
+      return jsonDecode(_jsonEncoder.convert(memoryInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getFingerprintInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final fingerPrintInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getFingerPrintInfo');
+
+      return jsonDecode(_jsonEncoder.convert(fingerPrintInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
     }
   }
 }

@@ -25,8 +25,8 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: TextButton(
             onPressed: () async {
-              List<Map<String, dynamic>> data =
-                  await _deviceInfoNullSafety.sensorInfo;
+              Map<String, dynamic> data =
+                  await _deviceInfoNullSafety.fingerPrintInfo;
 
               print(data);
             },
