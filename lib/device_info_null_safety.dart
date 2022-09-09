@@ -3,20 +3,35 @@ import 'package:device_info_null_safety/memory_info_enum.dart';
 import 'device_info_null_safety_platform_interface.dart';
 
 class DeviceInfoNullSafety {
-  Future<Map<String, dynamic>> get batteryInfo =>
-      DeviceInfoNullSafetyPlatform.instance.getBatteryInfo();
+  final DeviceInfoNullSafetyPlatform _instance =
+      DeviceInfoNullSafetyPlatform.instance;
 
-  Future<Map<String, dynamic>> get abiInfo =>
-      DeviceInfoNullSafetyPlatform.instance.getAbiInfo();
+  Future<Map<String, dynamic>> get batteryInfo => _instance.getBatteryInfo();
+
+  Future<Map<String, dynamic>> get abiInfo => _instance.getAbiInfo();
 
   Future<List<Map<String, dynamic>>> get sensorInfo =>
-      DeviceInfoNullSafetyPlatform.instance.getSensorInfo();
+      _instance.getSensorInfo();
 
   Future<Map<String, dynamic>> memoryInfo(
           {required MemoryInfoUnit memoryInfoUnit}) =>
-      DeviceInfoNullSafetyPlatform.instance
-          .getMemoryInfo(memoryInfoUnit: memoryInfoUnit);
+      _instance.getMemoryInfo(memoryInfoUnit: memoryInfoUnit);
 
   Future<Map<String, dynamic>> get fingerPrintInfo =>
-      DeviceInfoNullSafetyPlatform.instance.getFingerprintInfo();
+      _instance.getFingerprintInfo();
+
+  Future<Map<String, dynamic>> get systemInfo => _instance.getSystemInfo();
+
+  Future<Map<String, dynamic>> get displayInfo => _instance.getDisplayInfo();
+
+  Future<Map<String, dynamic>> get configInfo => _instance.getConfigInfo();
+
+  ///As of Now Don't use SimInfo Getter
+  // Future<Map<String, dynamic>> get simInfo => _instance.getSimInfo();
+
+  Future<Map<String, dynamic>> get nfcInfo => _instance.getNfcInfo();
+
+  Future<Map<String, dynamic>> get networkInfo => _instance.getNetworkInfo();
+
+  Future<Map<String, dynamic>> get locationInfo => _instance.getLocationInfo();
 }

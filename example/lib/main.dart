@@ -26,9 +26,9 @@ class _MyAppState extends State<MyApp> {
           child: TextButton(
             onPressed: () async {
               Map<String, dynamic> data =
-                  await _deviceInfoNullSafety.fingerPrintInfo;
+                  await _deviceInfoNullSafety.locationInfo;
 
-              print(data);
+              debugPrint(data.toString());
             },
             child: const Text('Call Button'),
           ),

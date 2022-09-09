@@ -102,4 +102,116 @@ class MethodChannelDeviceInfoNullSafety extends DeviceInfoNullSafetyPlatform {
             [MapEntry("code", error.code), MapEntry("message", error.message)]);
     }
   }
+
+  @override
+  Future<Map<String, dynamic>> getDisplayInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final displayInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getDisplayInfo');
+
+      return jsonDecode(_jsonEncoder.convert(displayInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getNfcInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final nfcInfo =
+          await methodChannel.invokeMethod<Map<dynamic, dynamic>>('getNfcInfo');
+
+      return jsonDecode(_jsonEncoder.convert(nfcInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getLocationInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final locationInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getLocationInfo');
+
+      return jsonDecode(_jsonEncoder.convert(locationInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getNetworkInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final networkInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getNetworkInfo');
+
+      return jsonDecode(_jsonEncoder.convert(networkInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getSimInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final simInfo =
+          await methodChannel.invokeMethod<Map<dynamic, dynamic>>('getSimInfo');
+
+      return jsonDecode(_jsonEncoder.convert(simInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getConfigInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final configInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getConfigInfo');
+
+      return jsonDecode(_jsonEncoder.convert(configInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getSystemInfo() async {
+    Map<String, dynamic> result = <String, dynamic>{};
+
+    try {
+      final systemInfo = await methodChannel
+          .invokeMethod<Map<dynamic, dynamic>>('getSystemInfo');
+
+      return jsonDecode(_jsonEncoder.convert(systemInfo));
+    } on PlatformException catch (error) {
+      return result
+        ..addEntries(
+            [MapEntry("code", error.code), MapEntry("message", error.message)]);
+    }
+  }
 }
