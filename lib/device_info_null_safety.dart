@@ -26,7 +26,7 @@ class DeviceInfoNullSafety {
 
   Future<Map<String, dynamic>> get configInfo => _instance.getConfigInfo();
 
-  ///As of Now Don't use SimInfo Getter
+  ///As for Now Don't use SimInfo Getter
   // Future<Map<String, dynamic>> get simInfo => _instance.getSimInfo();
 
   Future<Map<String, dynamic>> get nfcInfo => _instance.getNfcInfo();
