@@ -1,5 +1,5 @@
 name: device_info_null_safety
-description: Get Android Device Info like battery,abi,config,network,cpu,memory,sensor,fingerprint,system,display,nfc & location info easily with the help of device_info_null_safety
+description: Get Android Device Info like battery,abi,config & other info
 version: 0.0.2
 homepage: https://github.com/Divit-vaghani/
 repository: https://github.com/Divit-vaghani/device_info_null_safety
