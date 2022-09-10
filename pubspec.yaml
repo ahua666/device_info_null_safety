@@ -1,7 +1,8 @@
 name: device_info_null_safety
 description: A new Flutter project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/Divit-vaghani/
+repository: https://github.com/Divit-vaghani/device_info_null_safety
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
