@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * TODO: added documentation & licence 
+
+## 0.0.3
+
+* TODO: Upgraded flutter sdk and plugin version's 
