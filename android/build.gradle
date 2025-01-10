@@ -22,8 +22,11 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.divit.device_info_null_safety'
+    }
     compileSdkVersion 31
-
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
